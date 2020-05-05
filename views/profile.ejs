@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/assets/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <%- include('partials/nav.ejs'); -%>
+    <h1>Profile</h1>
+    <p>This is profile user id is <%= user.id %> and name is <%= user.name %></p>
+    <h5>Hobbies</h5>
+    <ul>
+        <% user.hobbies.forEach(function(item){%>
+            <li><%= item %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
