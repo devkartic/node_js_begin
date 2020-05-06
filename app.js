@@ -1,7 +1,9 @@
 const express = require('express');
 // let ejs = require('ejs');
+const bodyParser = require('body-parser')
+let urlencodedParser = bodyParser.urlencoded({ extended: false })
 const app = express();
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); 
 
 // Set Middleware for style start
 /* 
@@ -22,7 +24,11 @@ app.get('/', function (req, res) {
 });
 
 app.get('/contact', function (req, res) {
-  res.render('contact');
+  res.render('contact', { qs : req.query });
+});
+
+app.post('/contact', urlencodedParser, function (req, res) {
+  res.render('contact-success', { data : req.body });
 });
 
 app.get('/profile/:id', function (req, res) {

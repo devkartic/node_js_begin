@@ -10,5 +10,19 @@
     <%- include('partials/nav.ejs'); -%>
     <h1>Contact Us</h1>
     <p>This is contact page here.</p>
+    <ul>
+        <li>Dept : <%= qs.dept %></li>
+        <li>User Name : <%= qs.name %></li>
+    </ul>
+    <h4>Contact Form</h4>
+    <form id="contact-form" method="post" action="/contact">
+        <label>Why do you contact</label>
+        <input type="text" name="who" />
+        <label>Which Department</label>
+        <input type="text" name="dept" />
+        <label>Your email</label>
+        <input type="text" name="email" />
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
